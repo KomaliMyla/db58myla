@@ -1,0 +1,3 @@
+mongodb+srv://KomaliMyla:<password>@cluster0.vvukq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+C:/Users/S545256/db58myla/.git/

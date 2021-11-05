@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  - let chairimages = ['image-1.jpg','image-2.jpg','image-3.jpg','image-4.jpg','image-5.jpg']
+  - for(let i=0;i<3;i++){
+      - let no = Math.floor(Math.random()*5)
+      - let img = chairimages[no]
+
+      img(src=`images/${img}` alt='Chairs' style='width:300px; height:300px;')
+      |    
+  - }

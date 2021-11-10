@@ -3,6 +3,33 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var Chairs = require("./models/Chairs");
+
+// We can seed the collection if needed on
+// server start
+async function recreateDB(){
+ // Delete everything
+ await Chairs.deleteMany();
+ let instance1 = new Chairs({chair_type:"Arm Chair", cost: 500 ,color:"Black"});
+ instance1.save( function(err,doc) {
+ if(err) return console.error(err);
+ console.log("First object saved")
+ });
+
+ let instance2 = new Chairs({chair_type:"Office Chair", cost: 700 ,color:"Blue"});
+ instance1.save( function(err,doc) {
+ if(err) return console.error(err);
+ console.log("Second object saved")
+ });
+
+ let instance3 = new Chairs({chair_type:"Deck Chair", cost: 400 ,color:" Red"});
+ instance1.save( function(err,doc) {
+ if(err) return console.error(err);
+ console.log("Third  object saved")
+ });
+}
+let reseed = true;
+if (reseed) { recreateDB();}
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +48,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const connectionString = process.env.MONGO_CON 
+mongoose = require('mongoose');
+mongoose.connect(connectionString,
+{useNewUrlParser: true,
+useUnifiedTopology: true});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

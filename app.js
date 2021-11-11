@@ -35,13 +35,13 @@ async function recreateDB(){
  });
 
  let instance2 = new Chairs({chair_type:"Office Chair", cost: 700 ,color:"Blue"});
- instance1.save( function(err,doc) {
+ instance2.save( function(err,doc) {
  if(err) return console.error(err);
  console.log("Second object saved")
  });
 
  let instance3 = new Chairs({chair_type:"Deck Chair", cost: 400 ,color:" Red"});
- instance1.save( function(err,doc) {
+ instance3.save( function(err,doc) {
  if(err) return console.error(err);
  console.log("Third  object saved")
  });

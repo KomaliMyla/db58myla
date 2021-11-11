@@ -28,19 +28,19 @@ console.log("Connection to DB succeeded")});
 async function recreateDB(){
  // Delete everything
  await Chairs.deleteMany();
- let instance1 = new Chairs({Chair_type:"Arm Chair",  Color:"Black", Cost: 500});
+ let instance1 = new Chairs({Chair_type:"Arm",  Color:"Black", Cost: 500});
  instance1.save(function(err,doc) {
  if (err) return console.error(err);
  console.log("First object saved")
  });
 
- let instance2 = new Chairs({Chair_type:"Office Chair", Color:"Blue", Cost: 700});
+ let instance2 = new Chairs({Chair_type:"Office", Color:"Blue", Cost: 700});
  instance2.save( function(err,doc) {
  if (err) return console.error(err);
  console.log("Second object saved")
  });
 
- let instance3 = new Chairs({Chair_type:"Deck Chair", Color:" Red", Cost: 400});
+ let instance3 = new Chairs({Chair_type:"Deck", Color:" Red", Cost: 400});
  instance3.save( function(err,doc) {
  if (err) return console.error(err);
  console.log("Third  object saved")

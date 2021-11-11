@@ -2,17 +2,17 @@ extends layout
 
 block content
   h1= title
-  - let chair-img = results
-    table
+  - let images = results
+    table(class="table table-bordered")
         thead
             tr 
                 th(scope="col") Chair_type 
                 th(scope="col") Color 
                 th(scope="col") Cost
         tbody        
-            - for(let i=0;i<chair-img.length;i++){
+            - for(let i=0;i<images.length;i++){
                 tr
-                    td  #{chair-img[i].Chair_type}
-                    td  #{chair-img[i].Color}
-                    td  #{chair-img[i].Cost}
+                    td  #{images[i].Chair_type}
+                    td  #{images[i].Color}
+                    td  #{images[i].Cost}
             - }

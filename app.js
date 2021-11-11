@@ -24,30 +24,35 @@ db.once("open", function(){
 console.log("Connection to DB succeeded")});
 
 // We can seed the collection if needed on
-// server start
-async function recreateDB(){
- // Delete everything
- await Chairs.deleteMany();
- let instance1 = new Chairs({Chair_type:"Arm",  Color:"Black", Cost: 500});
- instance1.save(function(err,doc) {
- if (err) return console.error(err);
- console.log("First object saved")
- });
-
- let instance2 = new Chairs({Chair_type:"Office", Color:"Blue", Cost: 700});
- instance2.save( function(err,doc) {
- if (err) return console.error(err);
- console.log("Second object saved")
- });
-
- let instance3 = new Chairs({Chair_type:"Deck", Color:" Red", Cost: 400});
- instance3.save( function(err,doc) {
- if (err) return console.error(err);
- console.log("Third  object saved")
- });
+//server start
+async function recreateDB() {
+  // Delete everything
+  await Chairs.deleteMany();
+  let instance1 = new Chairs({ Chair_type: "Office",
+    Color: "White", Cost: 800});
+  instance1.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("First object saved");
+  });
+  let instance2 = new Chairs({
+    Chair_type: "Deck", Color: "Red",
+    Cost: 100});
+  instance2.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Second object saved");
+  });
+  let instance3 = new Chairs({
+    Chair_type: "Dahlias", Color: "Black",
+    Cost: 500});
+  instance3.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Third object saved");
+  });
 }
+
 let reseed = true;
-if (reseed) { recreateDB();}
+if (reseed) { recreateDB(); }
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -68,21 +73,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Chairs',ChairsRouter);
-app.use('/addmods',addmodsRouter);
-app.use('/selector',selectorRouter);
+app.use('/Chairs', ChairsRouter);
+app.use('/addmods', addmodsRouter);
+app.use('/selector', selectorRouter);
 app.use("/resource", resourceRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

@@ -1,9 +1,27 @@
 var createError = require('http-errors');
+var mongoose=require('mongoose');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var Chairs = require("./models/Chairs");
+
+const connectionString =process.env.MONGO_CON;
+mongoose = require('mongoose');
+mongoose.connect(connectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+var db= mongoose.connection;
+
+//Bind connection to error event
+db.on('error', console.error.bind(console, `MongoDB connection
+error:`));
+db.once("open", function(){
+
+
+console.log("Connection to DB succeeded")});
 
 // We can seed the collection if needed on
 // server start
@@ -36,6 +54,7 @@ var usersRouter = require('./routes/users');
 var ChairsRouter = require('./routes/Chairs');
 var addmodsRouter = require('./routes/addmods');
 var selectorRouter = require('./routes/selector');
+var resourceRouter = require("./routes/resource");
 
 var app = express();
 
@@ -49,17 +68,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const connectionString = process.env.MONGO_CON 
-mongoose = require('mongoose');
-mongoose.connect(connectionString,
-{useNewUrlParser: true,
-useUnifiedTopology: true});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/Chairs',ChairsRouter);
 app.use('/addmods',addmodsRouter);
 app.use('/selector',selectorRouter);
+app.use("/resource", resourceRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

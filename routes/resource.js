@@ -21,7 +21,7 @@ router.delete("/Chairs/:id",Chairs_controller.Chairs_delete);
 // PUT request to update Chairs.
 router.put("/Chairs/:id", Chairs_controller.Chairs_update_put);
 
-// GET request for one Chairs.
+// GET request for one Chair.
 router.get("/Chairs/:id", Chairs_controller.Chairs_detail);
 
 // GET request for list of all Chairs items.

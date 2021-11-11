@@ -6,5 +6,5 @@ Chair_type: String,
 Color: String,
 Cost: Number
 })
-module.exports = mongoose.model("Chairs",ChairsSchema)
+module.exports = mongoose.model("Chairs",ChairsSchema);
 

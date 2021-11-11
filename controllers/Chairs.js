@@ -24,7 +24,7 @@ exports.Chairs_create_post = async function (req, res) {
   // We are looking for a body, since POST does not have query parameters.
   // Even though bodies can be in many different formats, we will be picky
   // and require that it be a json object
-  // {"Chair_type":"Deck Chair, "Cost":"35", "Color":"Black"}
+  // {"Chair_type":"Deck Chair, "Cost":35, "Color":"Black"}
   document.Chair_type = req.body.Chair_type;
   document.Color = req.body.Color;
   document.Cost = req.body.Cost;

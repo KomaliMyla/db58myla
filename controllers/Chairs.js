@@ -18,6 +18,7 @@ exports.Chairs_list = async function(req, res) {
   res.status(500);
   res.send(`{"error": document for id ${req.params.id} not found`);
   }
+  };
 
 // Handle Chairs create on POST.
 exports.Chairs_create_post = async function (req, res) {

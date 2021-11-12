@@ -7,7 +7,8 @@ exports.Chairs_list = async function(req, res) {
   // // for a specific Chair
   // exports.Chairs_detail = function (req, res) {
   // res.send("NOT IMPLEMENTED: Chairs detail: " + req.params.id);
-  // };exports.Chairs_detail = async function (req, res) {
+  // };
+  exports.Chairs_detail = async function (req, res) {
   console.log("detail" + req.params.id);
   try {
   result = await Chairs.findById(req.params.id);

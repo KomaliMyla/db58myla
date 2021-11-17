@@ -14,3 +14,6 @@ router.get("/", Chairs_controllers.Chairs_view_all_Page);
 
 /* GET detail Chairs page */
 router.get('/detail', Chairs_controllers.Chairs_view_one_Page);
+
+/* GET create chairs page */
+router.get("/create", Chairs_controllers.Chairs_create_Page);

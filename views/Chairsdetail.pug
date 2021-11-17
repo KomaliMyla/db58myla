@@ -4,14 +4,14 @@ block content
   h1= title 
  
   - let Chairsid = toShow._id 
-  - let Chairstype = toShow.Chair_type 
-  - let Clor  = toShow.Color  
+  - let Chair_type = toShow.Chair_type 
+  - let Color  = toShow.Color  
   - let Cost  = toShow.Cost
   div 
     div.row 
-      div(class='costumeAttr mr-3') Chairs ID is:  #{Chairsid} 
-      div(class='costumeAttr mr-3') Chairs Type is:   #{Chair_type} 
-      div(class='costumeAttr mr-3') color is:   #{Color} 
-      div(class='costumeAttr mr-3') Cost is:   #{Cost}
+      div(class='ChairsAttr mr-3') Chairs ID is:  #{Chairsid} 
+      div(class='ChairsAttr mr-3') Chairs Type is:   #{Chair_type} 
+      div(class='ChairsAttr mr-3') Color is:   #{Color} 
+      div(class='ChairsAttr mr-3') Cost is:   #{Cost}
 
     // button(class="btn btn-success m-3" onclick="window.location.href='/Chairs'") Cancel

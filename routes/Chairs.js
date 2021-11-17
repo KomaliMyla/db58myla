@@ -19,4 +19,4 @@ router.get('/detail', Chairs_controllers.Chairs_view_one_Page);
 router.get("/create", Chairs_controllers.Chairs_create_Page);
 
 /* GET update Chairs page */
-router.get("/update", Chairs_controlers.Chairs_update_Page);
+router.get("/update", Chairs_controllers.Chairs_update_Page);

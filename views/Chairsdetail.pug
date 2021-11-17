@@ -1,20 +1,21 @@
    extends layout
+
    block content
     h1= title
     - let Chairid = toShow._id
-    - let Chair_type = toShow.Chairs_type
-    - let Chaircost = toShow.cost
-    - let Chairsize = toShow.size
+    - let Chair_type = toShow.Chair_type
+    - let Cost = toShow.Cost
+    - let Color  = toShow.Color
     div
     div.row
-    div(class='ChairsAttr mr-3') Chairs  ID is:
+    div(class='ChairsAttr mr-3') Chairs ID is:
     div #{Chairid}
     div.row
-    div(class='ChairsAttr mr-3') Chairs Type is:
+    div(class='ChairsAttr mr-3') Chair Type is:
     div #{Chair_type}
     div.row
-    div(class='ChairsAttr mr-3') Chairs Size is:
-    div #{Chairsize}
+    div(class='ChairsAttr mr-3') Chair Color is:
+    div #{ChairColor}
     div.row
     div(class='ChairsAttr mr-3') Chairs Cost is:
-    div #{Chaircost}
+    div #{ChairCost}

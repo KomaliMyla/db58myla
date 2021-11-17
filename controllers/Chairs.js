@@ -94,7 +94,7 @@ exports.Chairs_view_all_Page = async function (req, res) {
     console.log("single view for id " + req.query.id)
     try{
     result = await Chairs.findById( req.query.id)
-    res.render('Chairstail',
+    res.render('Chairsdetail',
    { title: 'Chairs Detail', toShow: result });
     }
     catch(err){

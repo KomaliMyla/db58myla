@@ -1,4 +1,5 @@
 var express = require('express');
+const Chairs_controllers = require("../controllers/Chairs");
 var router = express.Router();
 
 /* GET home page. */

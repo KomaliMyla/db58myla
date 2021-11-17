@@ -18,5 +18,5 @@ router.get('/detail', Chairs_controllers.Chairs_view_one_Page);
 /* GET create chairs page */
 router.get("/create", Chairs_controllers.Chairs_create_Page);
 
-/* GET update flowers page */
-router.get("/update", flowers_controlers.flowers_update_Page);
+/* GET update Chairs page */
+router.get("/update", Chairs_controlers.Chairs_update_Page);

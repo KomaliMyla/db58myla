@@ -105,20 +105,20 @@ exports.Chairs_view_all_Page = async function (req, res) {
    extends layout
    block content
     h1= title
-    - let costumeid = toShow._id
-    - let costume_type = toShow.costume_type
-    - let costumecost = toShow.cost
-    - let costumesize = toShow.size
+    - let Chairid = toShow._id
+    - let Chair_type = toShow.Chairs_type
+    - let Chaircost = toShow.cost
+    - let Chairsize = toShow.size
     div
     div.row
-    div(class='costumeAttr mr-3') Costume ID is:
-    div #{costumeid}
+    div(class='ChairsAttr mr-3') Chairs  ID is:
+    div #{Chairid}
     div.row
-    div(class='costumeAttr mr-3') Costume Type is:
-    div #{costume_type}
+    div(class='ChairsAttr mr-3') Chairs Type is:
+    div #{Chair_type}
     div.row
-    div(class='costumeAttr mr-3') Costume Size is:
-    div #{costumesize}
+    div(class='ChairsAttr mr-3') Chairs Size is:
+    div #{Chairsize}
     div.row
-    div(class='costumeAttr mr-3') Costume Cost is:
-    div #{costumecost}
+    div(class='ChairsAttr mr-3') Chairs Cost is:
+    div #{Chaircost}

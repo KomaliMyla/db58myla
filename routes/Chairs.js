@@ -7,3 +7,6 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+/*GET flowers*/
+router.get("/", Chairs_controllers.Chairs_view_all_Page);

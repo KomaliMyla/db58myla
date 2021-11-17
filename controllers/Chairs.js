@@ -117,13 +117,13 @@ exports.Chairs_view_all_Page = async function (req, res) {
     }
     };
 
-    // Handle building the view for updating a flowers.
+    // Handle building the view for updating chairs.
 // query provides the id
-  exports.flowers_update_Page = async function(req, res) {
+  exports.Chairs_update_Page = async function(req, res) {
     console.log("update view for item "+req.query.id)
     try{
-    let result = await flowers.findById(req.query.id)
-    res.render('flowersupdate', { title: 'flowers Update', toShow: result });
+    let result = await Chairs.findById(req.query.id)
+    res.render('Chairsupdate', { title: 'Chairs Update', toShow: result });
     }
     catch(err){
     res.status(500)

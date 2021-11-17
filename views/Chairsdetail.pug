@@ -1,21 +1,17 @@
-   extends layout
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  - let Chairsid = toShow._id 
+  - let Chairstype = toShow.Chair_type 
+  - let Clor  = toShow.Color  
+  - let Cost  = toShow.Cost
+  div 
+    div.row 
+      div(class='costumeAttr mr-3') Chairs ID is:  #{Chairsid} 
+      div(class='costumeAttr mr-3') Chairs Type is:   #{Chair_type} 
+      div(class='costumeAttr mr-3') color is:   #{Color} 
+      div(class='costumeAttr mr-3') Cost is:   #{Cost}
 
-   block content
-    h1= title
-    - let Chairid = toShow._id
-    - let Chair_type = toShow.Chair_type
-    - let Cost = toShow.Cost
-    - let Color  = toShow.Color
-    div
-    div.row
-    div(class='ChairsAttr mr-3') Chairs ID is:
-    div #{Chairid}
-    div.row
-    div(class='ChairsAttr mr-3') Chair Type is:
-    div #{Chair_type}
-    div.row
-    div(class='ChairsAttr mr-3') Chair Color is:
-    div #{ChairColor}
-    div.row
-    div(class='ChairsAttr mr-3') Chairs Cost is:
-    div #{ChairCost}
+    // button(class="btn btn-success m-3" onclick="window.location.href='/Chairs'") Cancel

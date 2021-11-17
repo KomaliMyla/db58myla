@@ -3,10 +3,10 @@ extends layout
 block content 
   h1= title 
  
-  - let Chairsid = toShow._id 
-  - let Chair_type = toShow.Chair_type 
+  - let Chairsid = toShow._id
+  - let Chair_type = toShow.Chair_type
   - let ChairColor = toShow.Color
-  - let ChairCost = toShow.Cost 
+  - let ChairCost = toShow.Cost
    
   div.row(class='mb-4') 
     div.mr-1 ID is 
@@ -22,9 +22,9 @@ block content
     div.form-group 
         label.ChairsAttr(for='Cost') Chair Cost 
         input#Cost(type='number', name='Cost', value= ChairCost ) 
-    input(class="btn btn-warning m-4" type="submit") 
+    input(class="btn btn-Success m-4" type="submit") 
 
-    button(class="btn btn-success m-4" onclick="window.location.href='/Chairs'") Cancel 
+    button(class="btn btn-primary m-4" onclick="window.location.href='/Chairs'") Cancel 
  
   script. 
     document.forms['ChairsForm'].addEventListener('submit', (event) => { 

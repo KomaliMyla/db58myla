@@ -41,6 +41,18 @@ exports.Chairs_create_post = async function (req, res) {
   }
 };
 
+  // Handle Chairs delete on DELETE.
+  exports.Chairs_delete = async function(req, res) {
+    console.log("delete " + req.params.id)
+    try {
+    result = await Chairs.findByIdAndDelete( req.params.id)
+    console.log("Removed " + result)
+    res.send(result)
+    } catch (err) {
+    res.status(500)
+    res.send(`{"error": Error deleting ${err}}`);
+    }
+   };
 
 // Handle Chairs update form on PUT.
 
@@ -49,19 +61,6 @@ exports.Chairs_update_put = async function (req, res) { 
   with body ${JSON.stringify(req.body)}`);  
   try {    let toUpdate = await Chairs.findById(req.params.id);
 
-    // Handle Chairs delete on DELETE.
-exports.Chairs_delete = async function(req, res) {
-  console.log("delete " + req.params.id)
-  try {
-  result = await Chairs.findByIdAndDelete( req.params.id)
-  console.log("Removed " + result)
-  res.send(result)
-  } catch (err) {
-  res.status(500)
-  res.send(`{"error": Error deleting ${err}}`);
-  }
- };
-  
   
       // Do updates of properties   
    if (req.body.Chairs_type)     

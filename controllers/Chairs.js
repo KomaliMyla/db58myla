@@ -41,20 +41,16 @@ exports.Chairs_create_post = async function (req, res) {
   }
 };
 
-// Handle Chairs delete form on DELETE.
-exports.Chairs_delete = function (req, res) {
-  res.send("NOT IMPLEMENTED: Chairs delete DELETE " + req.params.id);
-};
 
 // Handle Chairs update form on PUT.
-//Handle Chairs update form on PUT.
+
 exports.Chairs_update_put = async function (req, res) {  
   console.log(`update on id ${req.params.id} 
   with body ${JSON.stringify(req.body)}`);  
   try {    let toUpdate = await Chairs.findById(req.params.id);
 
-    // Handle Costume delete on DELETE.
-exports.costume_delete = async function(req, res) {
+    // Handle Chairs delete on DELETE.
+exports.Chairs_delete = async function(req, res) {
   console.log("delete " + req.params.id)
   try {
   result = await Costume.findByIdAndDelete( req.params.id)

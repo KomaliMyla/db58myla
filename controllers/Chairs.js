@@ -53,7 +53,7 @@ exports.Chairs_update_put = async function (req, res) { 
 exports.Chairs_delete = async function(req, res) {
   console.log("delete " + req.params.id)
   try {
-  result = await Costume.findByIdAndDelete( req.params.id)
+  result = await Chairs.findByIdAndDelete( req.params.id)
   console.log("Removed " + result)
   res.send(result)
   } catch (err) {

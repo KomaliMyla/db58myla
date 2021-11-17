@@ -52,6 +52,19 @@ exports.Chairs_update_put = async function (req, res) { 
   console.log(`update on id ${req.params.id} 
   with body ${JSON.stringify(req.body)}`);  
   try {    let toUpdate = await Chairs.findById(req.params.id);
+
+    // Handle Costume delete on DELETE.
+exports.costume_delete = async function(req, res) {
+  console.log("delete " + req.params.id)
+  try {
+  result = await Costume.findByIdAndDelete( req.params.id)
+  console.log("Removed " + result)
+  res.send(result)
+  } catch (err) {
+  res.status(500)
+  res.send(`{"error": Error deleting ${err}}`);
+  }
+ };
   
   
       // Do updates of properties   

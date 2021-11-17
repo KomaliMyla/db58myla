@@ -13,4 +13,4 @@ module.exports = router;
 router.get("/", Chairs_controllers.Chairs_view_all_Page);
 
 /* GET detail Chairs page */
-router.get('/detail', Chairs_controlers.Chairs_view_one_Page);
+router.get('/detail', Chairs_controllers.Chairs_view_one_Page);

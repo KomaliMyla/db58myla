@@ -1,0 +1,48 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+  
+    - let Chairsid = toShow._id 
+    - let Chairs_type = toShow.Chairs_type 
+    - let ChairsColor = toShow.Color 
+    - let ChairsCost = toShow.Cost 
+    - let actionid = "/resource/Chairs/" + Chairsid 
+    script let actionid = "#{actionid}" 
+    div 
+      div.row 
+        div(class='ChairsAttr mr-3') Chairs ID is: #{Chairsid}  
+        div(class='ChairsAttr mr-3') Chairs Type is: #{Chairs_type}
+        div(class='ChairsAttr mr-3') Color is:  #{ChairsColor} 
+        div(class='ChairsAttr mr-3') Cost is:  #{ChairsCost}
+        
+ 
+    button(class="btn btn-warning m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-success m-3" onclick="window.location.href='/Chairs'") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the Chairs collection 
+      window.location.href='/Chairs' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'      // Don't need a body for the delete 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/Chairs' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    }

@@ -2,44 +2,48 @@ extends layout
  
 block content 
   h1= title 
- 
-  - let Chairsid = toShow._id 
-  - let Chair_type = toShow.Chair_type 
-  - let ChairsColor = toShow.Color
-  - let ChairsCost = toShow.Cost 
-   
-  div.row(class='mb-4') 
-    div.mr-1 ID is 
-    div #{Chairsid} 
-  - let actionid = "/resource/Chairs/" + Chairsid 
-  form(id='ChairsForm', action= actionid, method="PUT") 
-    div.form-group 
-        label.ChairsAttr(for='Chair_type') Chairs type 
-        input#Chair_type(type='text', name='Chair_type', value= Chair_type ) 
-    div.form-group 
-        label.ChairsAttr(for='Color') Chairs Color  
-        input#Color(type='text', name='Color', value= ChairsColor ) 
-    div.form-group 
-        label.ChairsAttr(for='Cost') Chairs cost 
-        input#Cost(type='number', name='Cost', value= ChairsCost ) 
-    input(class="btn btn-info m-4" type="submit") 
 
-    button(class="btn btn-warning m-4" onclick="window.location.href='/Chairs'") Cancel 
+  if (toShow == null) 
+    h2 No instance to Update     
+  else
  
-  script. 
-    document.forms['ChairsForm'].addEventListener('submit', (event) => { 
-      event.preventDefault(); 
-      // TODO do something here to show user that form is being submitted 
-      fetch(event.target.action, { 
-        method: 'PUT', 
-        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
-      }).then((resp) => { 
-        return resp.json(); // or resp.text() or whatever the server sends 
-      }).then((body) => { 
-        alert("Update succeded") 
-        // TODO handle body 
-      }).catch((error) => { 
-        // TODO handle error 
-        alert("Update failed " + error ) 
-      }); 
-    });
+    - let Chairsid = toShow._id 
+    - let Chair_type = toShow.Chair_type 
+    - let Chairscolor = toShow.color
+    - let Chairscost = toShow.cost 
+    
+    div.row(class='mb-2') 
+      div.mr-1 ID is 
+      div #{Chairsid} 
+    - let actionid = "/resource/Chairs/" + Chairsid 
+    form(id='ChairsForm', action= actionid, method="PUT") 
+      div.form-group 
+          label.ChairsAttr(for='Chair_type') Chairs type 
+          input#Chair_type(type='text', name='Chair_type', value= Chair_type ) 
+      div.form-group 
+          label.ChairsAttr(for='color') Chairs color  
+          input#color(type='text', name='color', value= Chairscolor ) 
+      div.form-group 
+          label.ChairsAttr(for='cost') Chairs cost 
+          input#cost(type='number', name='cost', value= Chairscost ) 
+      input(type="submit") 
+
+      button(class="btn btn-dark m-2" onclick="window.location.href='/Chairs'") Cancel 
+  
+    script. 
+      document.forms['ChairsForm'].addEventListener('submit', (event) => { 
+        event.preventDefault(); 
+        // TODO do something here to show user that form is being submitted 
+        fetch(event.target.action, { 
+          method: 'PUT', 
+          body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+        }).then((resp) => { 
+          return resp.json(); // or resp.text() or whatever the server sends 
+        }).then((body) => { 
+          alert("Update succeded") 
+          // TODO handle body 
+        }).catch((error) => { 
+          // TODO handle error 
+          alert("Update failed " + error ) 
+        }); 
+      });

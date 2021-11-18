@@ -21,5 +21,6 @@ router.get("/update", Chairs_controllers.Chairs_update_Page);
 
 /* GET delete Chairs page */
 router.get("/delete", Chairs_controllers.Chairs_delete_Page);
+
 module.exports = router;
 

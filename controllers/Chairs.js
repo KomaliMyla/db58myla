@@ -136,8 +136,7 @@ exports.Chairs_view_all_Page = async function (req, res) {
     console.log("Delete view for id " + req.query.id)
     try{
     result = await Chairs.findById(req.query.id)
-    res.render('Chairsdelete', { title: 'Chairs Delete', toShow:
-    result });
+    res.render('Chairsdelete', { title: 'Chairs Delete', toShow: result });
     }
     catch(err){
     res.status(500)

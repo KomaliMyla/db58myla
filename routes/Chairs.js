@@ -7,8 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('Chairs', { title: 'Search Results Chairs' });
 });
 
-module.exports = router;
-
 /*GET chairs*/
 router.get("/", Chairs_controllers.Chairs_view_all_Page);
 
@@ -20,3 +18,8 @@ router.get("/create", Chairs_controllers.Chairs_create_Page);
 
 /* GET update Chairs page */
 router.get("/update", Chairs_controllers.Chairs_update_Page);
+
+/* GET delete flowers page */
+//router.get("/delete", flowers_controlers.flowers_delete_Page);
+
+module.exports = router;

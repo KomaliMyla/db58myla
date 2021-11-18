@@ -19,7 +19,7 @@ router.get("/create", Chairs_controllers.Chairs_create_Page);
 /* GET update Chairs page */
 router.get("/update", Chairs_controllers.Chairs_update_Page);
 
-/* GET delete flowers page */
-//router.get("/delete", flowers_controlers.flowers_delete_Page);
-
+/* GET delete Chairs page */
+router.get("/delete", Chairs_controllers.Chairs_delete_Page);
 module.exports = router;
+

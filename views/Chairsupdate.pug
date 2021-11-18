@@ -4,9 +4,9 @@ block content
   h1= title 
  
   - let Chairsid = toShow._id 
-  - let Chairs_type = toShow.Chairs_type 
-  - let Chairscolor = toShow.color
-  - let Chairscost = toShow.cost 
+  - let Chair_type = toShow.Chair_type 
+  - let ChairsColor = toShow.Color
+  - let ChairsCost = toShow.Cost 
    
   div.row(class='mb-4') 
     div.mr-1 ID is 
@@ -14,14 +14,14 @@ block content
   - let actionid = "/resource/Chairs/" + Chairsid 
   form(id='ChairsForm', action= actionid, method="PUT") 
     div.form-group 
-        label.ChairsAttr(for='Chairs_type') Chairs type 
-        input#Chairss_type(type='text', name='Chairss_type', value= Chairss_type ) 
+        label.ChairsAttr(for='Chair_type') Chairs type 
+        input#Chair_type(type='text', name='Chair_type', value= Chair_type ) 
     div.form-group 
-        label.ChairsAttr(for='Color') Chairs color  
-        input#Color(type='text', name='Color', value= Chairscolor ) 
+        label.ChairsAttr(for='Color') Chairs Color  
+        input#Color(type='text', name='Color', value= ChairsColor ) 
     div.form-group 
         label.ChairsAttr(for='Cost') Chairs cost 
-        input#Cost(type='number', name='Cost', value= Chairscost ) 
+        input#Cost(type='number', name='Cost', value= ChairsCost ) 
     input(class="btn btn-info m-4" type="submit") 
 
     button(class="btn btn-warning m-4" onclick="window.location.href='/Chairs'") Cancel 

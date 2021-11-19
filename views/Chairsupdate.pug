@@ -9,8 +9,8 @@ block content
  
     - let Chairsid = toShow._id 
     - let Chair_type = toShow.Chair_type 
-    - let Chairscolor = toShow.color
-    - let Chairscost = toShow.cost 
+    - let ChairsColor = toShow.Color
+    - let ChairsCost = toShow.Cost 
     
     div.row(class='mb-2') 
       div.mr-1 ID is 
@@ -21,11 +21,11 @@ block content
           label.ChairsAttr(for='Chair_type') Chairs type 
           input#Chair_type(type='text', name='Chair_type', value= Chair_type ) 
       div.form-group 
-          label.ChairsAttr(for='color') Chairs color  
-          input#color(type='text', name='color', value= Chairscolor ) 
+          label.ChairsAttr(for='Color') Chairs Color  
+          input#Color(type='text', name='Color', value= ChairsColor ) 
       div.form-group 
-          label.ChairsAttr(for='cost') Chairs cost 
-          input#cost(type='number', name='cost', value= Chairscost ) 
+          label.ChairsAttr(for='Cost') Chairs Cost 
+          input#Cost(type='number', name='Cost', value= ChairsCost ) 
       input(type="submit") 
 
       button(class="btn btn-dark m-2" onclick="window.location.href='/Chairs'") Cancel 

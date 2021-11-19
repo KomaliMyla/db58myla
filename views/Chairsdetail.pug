@@ -6,7 +6,7 @@ block content
   if (toShow == null) 
     h2 No instance to delete 
   else 
-  
+
   - let Chairsid = toShow._id 
   - let Chair_type = toShow.Chair_type 
   - let Color  = toShow.Color  
@@ -18,4 +18,4 @@ block content
       div(class='ChairsAttr mr-3') Color is:   #{Color} 
       div(class='ChairsAttr mr-3') Cost is:   #{Cost}
 
-    // button(class="btn btn-success m-3" onclick="window.location.href='/Chairs'") Cancel
+     button(class="btn btn-danger m-3" onclick="window.location.href='/Chairs'") Cancel

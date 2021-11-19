@@ -7,9 +7,9 @@ block content
   div(class="container-fluid")
    div(class="row m-1")
     each item in items
-     - let destination = `dispatch(\"/costumes/update?id=${item._id}\")`
-      div(class="row-sm-2", class="m-1") Item #{item.costume_type}(#{item.size}) is #{item.cost}
-      button.btn( class="btn-primary ml-1", onclick= destination) Update
+     - let destination = `dispatch(\"/Chairs/update?id=${item._id}\")`
+      div(class="row-sm-2", class="m-1") Item #{item.Chairs_type}(#{item.Color}) is #{item.Cost}
+      button.btn( class="btn-info ml-1", onclick= destination) Update
      script.
          function dispatch(path){
          window.location.href=path

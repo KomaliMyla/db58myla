@@ -4,14 +4,14 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #ee87f1;
 }
 
 .ChairsAttr {
-  background-color: #b657ec;
+  background-color: hsl(0, 85%, 70%);
   width: 120px;
  }
 
  h1 {
-   color: bisque;
+   color: rgb(7, 80, 102);
  }

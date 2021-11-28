@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   - let images = results
-  - let items = result
+  - let items = results
    - let destinationcreate = `dispatchCreate(\"/Chairs/create\")`
    button.btn( class="btn-success ml-1", onclick= destinationcreate) Create
  
@@ -12,10 +12,10 @@ block content
      - let destination = `dispatch(\"/Chairs/update?id=${item._id}\")`
      - let destinationdetail = `dispatch(\"/Chairs/detail?id=${item._id}\")`
      - let destinationdelete = `dispatchDelete(\"/Chairs/delete?id=${item._id}\")`
-      div(class="row-sm-2", class="m-1") item #{item.Chairs_type}(#{item.Color}) is #{item.Cost}
-      button.btn( class="btn-small btn-warning ml-1", onclick= destination) Update
-      button.btn( class="btn-dark ml-1", onclick= destinationdetail) Detail
-      button.btn( class="btn-info ml-1", onclick= destinationdelete) Delete
+      div(class="row-sm-2", class="m-1") item #{item.Chair_type}(#{item.Color}) is #{item.Cost}
+      button.btn( class="btn-small btn-info ml-1", onclick= destination) Update
+      button.btn( class="btn-success ml-1", onclick= destinationdetail) Detail
+      button.btn( class="btn-warning ml-1", onclick= destinationdelete) Delete
      script.
         function dispatch(path){
         window.location.href=path
@@ -30,13 +30,13 @@ block content
     table(class="table table-info table-bordered")
         thead
             tr 
-                th(scope="col") Chairs_type 
+                th(scope="col") Chair_type 
                 th(scope="col") Color 
                 th(scope="col") Cost
         tbody        
-            - for(let i=0;i<flower.length;i++){
+            - for(let i=0;i<images.length;i++){
                 tr
-                    td  #{flower[i].Chairs_type}
-                    td  #{flower[i].Color}
-                    td  #{flower[i].Cost}
+                    td  #{images[i].Chair_type}
+                    td  #{images[i].Color}
+                    td  #{images[i].Cost}
             - }

@@ -3,17 +3,32 @@ extends layout
 block content
   h1= title
   - let images = results
-  - let items = results
+  - let items = result
+  - let destinationcreate = `dispatchCreate(\"/Chairs/create\")`
+    button.btn( class="btn-primary ml-1", onclick= destinationcreate) Create
   div(class="container-fluid")
    div(class="row m-1")
     each item in items
+    
      - let destination = `dispatch(\"/Chairs/update?id=${item._id}\")`
+    - let destinationdetail = `dispatch(\"/Chairs/detail?id=${item._id}\")`
+     - let destinationdelete = `dispatchDelete(\"/Chairs/delete?id=${item._id}\")`
       div(class="row-sm-2", class="m-1") Item #{item.Chairs_type}(#{item.Color}) is #{item.Cost}
-      button.btn( class="btn-info ml-1", onclick= destination) Update
+      button.btn( class="btn-small btn-info ml-1", onclick= destination) Update
+      button.btn( class="btn-success ml-1", onclick= destinationdetail) Detail
+      button.btn( class="btn-warning ml-1", onclick= destinationdelete) Delete
      script.
          function dispatch(path){
          window.location.href=path
          }
+         function dispatchCreate(path){
+         window.location.href=path
+        }
+         function dispatchDelete(path){
+         window.location.href=path
+        }
+
+         
     table(class="table table-bordered")
         thead
             tr 
